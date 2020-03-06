@@ -1,0 +1,64 @@
+# Project: mmdvmcal
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = BERCal.o Console.o CRC.o Golay24128.o Hamming.o MMDVMCal.o NXDNLICH.o P25Utils.o SerialController.o SerialPort.o Utils.o YSFConvolution.o YSFFICH.o
+LINKOBJ  = BERCal.o Console.o CRC.o Golay24128.o Hamming.o MMDVMCal.o NXDNLICH.o P25Utils.o SerialController.o SerialPort.o Utils.o YSFConvolution.o YSFFICH.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib32" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -lws2_32 -m32
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = mmdvmcal.exe
+CXXFLAGS = $(CXXINCS) -m32
+CFLAGS   = $(INCS) -m32
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+BERCal.o: BERCal.cpp
+	$(CPP) -c BERCal.cpp -o BERCal.o $(CXXFLAGS)
+
+Console.o: Console.cpp
+	$(CPP) -c Console.cpp -o Console.o $(CXXFLAGS)
+
+CRC.o: CRC.cpp
+	$(CPP) -c CRC.cpp -o CRC.o $(CXXFLAGS)
+
+Golay24128.o: Golay24128.cpp
+	$(CPP) -c Golay24128.cpp -o Golay24128.o $(CXXFLAGS)
+
+Hamming.o: Hamming.cpp
+	$(CPP) -c Hamming.cpp -o Hamming.o $(CXXFLAGS)
+
+MMDVMCal.o: MMDVMCal.cpp
+	$(CPP) -c MMDVMCal.cpp -o MMDVMCal.o $(CXXFLAGS)
+
+NXDNLICH.o: NXDNLICH.cpp
+	$(CPP) -c NXDNLICH.cpp -o NXDNLICH.o $(CXXFLAGS)
+
+P25Utils.o: P25Utils.cpp
+	$(CPP) -c P25Utils.cpp -o P25Utils.o $(CXXFLAGS)
+
+SerialController.o: SerialController.cpp
+	$(CPP) -c SerialController.cpp -o SerialController.o $(CXXFLAGS)
+
+SerialPort.o: SerialPort.cpp
+	$(CPP) -c SerialPort.cpp -o SerialPort.o $(CXXFLAGS)
+
+Utils.o: Utils.cpp
+	$(CPP) -c Utils.cpp -o Utils.o $(CXXFLAGS)
+
+YSFConvolution.o: YSFConvolution.cpp
+	$(CPP) -c YSFConvolution.cpp -o YSFConvolution.o $(CXXFLAGS)
+
+YSFFICH.o: YSFFICH.cpp
+	$(CPP) -c YSFFICH.cpp -o YSFFICH.o $(CXXFLAGS)
